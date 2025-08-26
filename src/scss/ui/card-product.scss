@@ -1,0 +1,95 @@
+.card-product {
+  display: flex;
+  flex-direction: column;
+  &__gallery {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1/1.24;
+    z-index: 1;
+    margin-bottom: 16px;
+
+    transition: opacity 0.3s ease;
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    img {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+  }
+  &__size {
+    position: absolute;
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 0 20px;
+    line-height: 150%;
+    box-shadow: 0 0 53px 0 rgba(32, 31, 37, 0.03);
+    background-color: var(--primary);
+    left: 0;
+    bottom: 0;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    margin-bottom: 4px;
+
+    transition: color .3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+  }
+  &__descr {
+    @include overflowText(2);
+    font-size: 14px;
+    line-height: 157%;
+    color: rgba(0, 0, 0, 0.54);
+    margin: 0px 0px 16px 0px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+  }
+  &__btn {
+    font-size: 14px;
+    line-height: 157%;
+    padding: 9px 20px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__order {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    font-size: 14px;
+    line-height: 157%;
+
+    @include hover {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+  }
+}

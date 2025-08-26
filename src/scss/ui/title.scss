@@ -1,0 +1,14 @@
+.s-title {
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 114%;
+  @include laptop-middle {
+    font-size: 44px;
+  }
+  @include laptop-min {
+    font-size: 36px;
+  }
+  @include tablet {
+    font-size: 28px;
+  }
+}

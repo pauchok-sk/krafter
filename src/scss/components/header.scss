@@ -1,0 +1,237 @@
+.header-top {
+  backdrop-filter: blur(17.899999618530273px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  @include laptop-min {
+    display: none;
+  }
+  &__wrapper {
+    @include flex-between;
+    gap: 20px;
+  }
+  &__nav {
+  }
+  &__list {
+    display: flex;
+    gap: 32px;
+    @include laptop-middle {
+      gap: 16px;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      padding: 12px 0px;
+
+      @include hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+      @include laptop-middle {
+        font-weight: 400;
+      }
+      &._active {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: var(--primary);
+        border-radius: 10px;
+        height: 2px;
+        left: 0;
+        right: 0;
+        top: 0;
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    @include laptop-middle {
+      gap: 16px;
+    }
+  }
+  &__contacts-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+    @include laptop-middle {
+      font-weight: 400;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.header {
+  padding: 30px 0px;
+  @include laptop-middle {
+    padding: 15px 0px;
+  }
+  &__wrapper {
+    @include flex-between;
+    gap: 30px;
+  }
+  &__logo {
+    display: block;
+    width: 225px;
+    @include laptop {
+      width: 200px;
+    }
+    @include laptop-middle {
+      width: 160px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @include laptop {
+      gap: 24px;
+    }
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__list {
+    display: flex;
+    gap: 32px;
+    @include laptop {
+      gap: 16px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 144%;
+
+      transition: color 0.3s ease;
+
+      @include hover {
+        color: var(--dark);
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+      @include laptop {
+        font-size: 16px;
+      }
+      @include laptop-middle {
+        font-size: 15px;
+        gap: 4px;
+        font-weight: 400;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  &__btn {
+    @include flex-center;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: var(--dark);
+
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+    @include laptop-middle {
+      width: 40px;
+      height: 40px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      @include laptop-middle {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &__order-btn {
+    @include laptop-middle {
+      display: none;
+    }
+
+    @include hover {
+      svg {
+        max-width: 20px;
+      }
+    }
+
+    svg {
+      max-width: 0px;
+      width: 100%;
+      overflow: hidden;
+      transition: max-width .3s ease;
+    }
+  }
+  &__burger-btn {
+    @include flex-center;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+
+    transition: color .3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  
+    div {
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+}

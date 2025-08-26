@@ -1,0 +1,31 @@
+@import "./base/normalize";
+@import "./base/vars";
+@import "./base/templates";
+@import "./base/settings";
+@import "./base/media";
+@import "./base/body-config";
+@import "./base/config-container";
+
+// ui
+@import "./ui/button";
+@import "./ui/list";
+@import "./ui/dropdown";
+@import "./ui/title";
+@import "./ui/card-product";
+@import "./ui/slider";
+@import "./ui/tab";
+@import "./ui/card-article";
+@import "./ui/card-video";
+@import "./ui/card-new";
+
+// widgets
+@import "./widgets/burger";
+
+// components
+@import "./components/header";
+
+@import "./components/intro";
+@import "./components/s-rec";
+@import "./components/s-center";
+
+@import "./components/footer";

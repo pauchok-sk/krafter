@@ -1,0 +1,220 @@
+.intro {
+  position: relative;
+  &__slider {
+  }
+  &__slide {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    padding: 40px 0px;
+    color: white;
+    min-height: 875px;
+    box-sizing: border-box;
+    z-index: 1;
+
+    @include desktop {
+      min-height: 780px;
+    }
+    @include laptop {
+      min-height: 690px;
+    }
+    @include laptop-middle {
+      min-height: 580px;
+    }
+    @include tablet {
+      min-height: 450px;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      z-index: -1;
+    }
+    &::before {
+      inset: 0;
+      background: linear-gradient(
+        165deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+    }
+    &::after {
+      background-color: black;
+      opacity: 0.4;
+      z-index: -2;
+    }
+  }
+  &__slide-info {
+    max-width: 690px;
+  }
+  &__slide-title {
+    margin: 0px 0px 24px 0px;
+  }
+  &__slide-content {
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0px 0px 40px 0px;
+  }
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .btn-s {
+      @include tablet-min {
+        width: 100%;
+      }
+    }
+  }
+  &__adv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    transform: translateY(-50%);
+    top: 50%;
+    right: calc((100vw - 1775px) / 2);
+    z-index: 10;
+
+    @media (max-width: 1799px) {
+      right: 15px;
+    }
+    @include laptop-min {
+      position: static;
+      padding: 25px 15px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      background-color: var(--dark);
+      transform: translateY(0);
+    }
+    @include tablet-min {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__adv-item {
+    position: relative;
+    @include laptop-min {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 15px;
+    }
+
+    @include hover {
+      .intro__adv-drop {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+  }
+  &__adv-drop {
+    position: absolute;
+    z-index: 10;
+    right: 64px;
+    padding-right: 16px;
+    width: 440px;
+
+    transform: translateX(-30px);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .4s ease, visibility .4s ease, transform .4s ease;
+
+    @include laptop-min {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+  &__adv-inside {
+    border-radius: 20px;
+    padding: 24px;
+    background-color: white;
+    @include tablet {
+      padding: 24px 15px;
+    }
+  }
+  &__adv-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    margin: 0px 0px 2px 0px;
+  }
+  &__adv-descr {
+    font-size: 14px;
+    line-height: 157%;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  &__adv-video-btn {
+    font-size: 14px;
+    line-height: 157%;
+    margin-top: 8px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  &__adv-btn {
+    @include flex-center;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    border: 1px solid white;
+    color: white;
+
+    transition:
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background-color 0.3s ease;
+
+    @include hover {
+      color: black;
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__pagination-slider {
+    @include flex-center;
+    gap: 8px;
+    position: absolute;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 16px !important;
+    z-index: 10;
+
+    .swiper-pagination-bullet {
+      display: block;
+      margin: 0 !important;
+      flex: 0 1 8px;
+      aspect-ratio: 1/1;
+      border-radius: 4px;
+      opacity: 1;
+      background-color: rgba(255, 255, 255, 0.16);
+      transition:
+        background-color 0.3s ease,
+        flex-basis 0.3s ease;
+
+      @include hover {
+        background-color: rgba(255, 255, 255, 0.32);
+      }
+
+      &.swiper-pagination-bullet-active {
+        flex-basis: 32px;
+        background-color: rgba(255, 255, 255, 0.32);
+      }
+    }
+  }
+}
