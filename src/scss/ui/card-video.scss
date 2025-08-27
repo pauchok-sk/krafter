@@ -21,6 +21,10 @@
       rgba(0, 0, 0, 0.6) 100%
     );
   }
+  @media (max-width: 1099px) {
+    padding: 0;
+    display: block;
+  }
   &__time {
     position: absolute;
     top: 8px;
@@ -36,6 +40,18 @@
 
     z-index: 1;
   }
+  &__gallery {
+    @media (max-width: 1099px) {
+      @include flex-center;
+      position: relative;
+
+      width: 100%;
+      height: 60%;
+      @include tablet-min {
+        height: 65%;
+      }
+    }
+  }
   &__img {
     position: absolute;
     top: 0;
@@ -45,6 +61,9 @@
     width: 100%;
     height: 100%;
     z-index: -3;
+    @media (max-width: 1099px) {
+      position: static;
+    }
   }
   &__link {
     position: absolute;
@@ -59,6 +78,15 @@
     @include hover {
       opacity: 0.8;
     }
+    @media (max-width: 1099px) {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 16px;
+      background-color: white;
+      width: 100%;
+      max-width: none;
+      color: black;
+    }
   }
   &__date {
     font-weight: 500;
@@ -66,6 +94,10 @@
     line-height: 157%;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 8px;
+    @media (max-width: 1099px) {
+      color: rgba(0, 0, 0, 0.54);
+      margin: 4px 0px 0px 0px;
+    }
   }
   &__descr {
     @include overflowText(2);
@@ -73,6 +105,14 @@
     font-size: 24px;
     line-height: 125%;
     margin: 0;
+    @include tablet {
+      font-size: 20px;
+    }
+    @include tablet-min {
+      font-size: 14px;
+      line-height: 136%;
+      color: rgba(0, 0, 0, 0.87);
+    }
   }
   &__play-btn {
     @include flex-center;
@@ -94,6 +134,16 @@
 
     @include hover {
       background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 1099px) {
+      width: 70px;
+      height: 70px;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
     }
 
     svg {

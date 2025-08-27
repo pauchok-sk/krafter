@@ -36,6 +36,11 @@
     background-color: var(--primary);
     left: 0;
     bottom: 0;
+
+    @include tablet {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
   }
   &__title {
     font-weight: 500;
@@ -43,10 +48,14 @@
     line-height: 144%;
     margin-bottom: 4px;
 
-    transition: color .3s ease;
+    transition: color 0.3s ease;
 
     @include hover {
       color: var(--primary);
+    }
+    @include tablet-min {
+      font-size: 14px;
+      line-height: 136%;
     }
   }
   &__descr {
@@ -55,6 +64,12 @@
     line-height: 157%;
     color: rgba(0, 0, 0, 0.54);
     margin: 0px 0px 16px 0px;
+
+    @include tablet-min {
+      @include overflowText(1);
+      font-size: 12px;
+      line-height: 142%;
+    }
   }
   &__nav {
     display: flex;
@@ -66,6 +81,10 @@
     font-size: 14px;
     line-height: 157%;
     padding: 9px 20px;
+
+    @include tablet-min {
+      display: none;
+    }
 
     svg {
       width: 18px;
@@ -84,6 +103,15 @@
       svg {
         transform: translateX(5px);
       }
+    }
+
+    @include tablet-min {
+      justify-content: center;
+      gap: 6px;
+      padding: 8px;
+      border-radius: 100px;
+      background-color: rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
 
     svg {

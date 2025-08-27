@@ -1,8 +1,8 @@
 .burger-overlay {
   position: fixed;
   inset: 0;
-  background-color: black;
-  z-index: 190;
+  background-color: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(65px);
 
   opacity: 0;
   visibility: hidden;
@@ -11,6 +11,8 @@
     opacity 0.4s ease,
     visibility 0.4s ease;
 
+  z-index: 190;
+
   &._active {
     opacity: 0.5;
     visibility: visible;
@@ -18,83 +20,93 @@
 }
 .burger {
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 320px;
   top: 0;
-  left: 0;
-  bottom: 0;
-  padding: 25px 15px;
-  background-color: white;
+  max-height: 100svh;
+  width: 500px;
+  max-width: 100%;
+  left: calc(50% - 250px);
   overflow-y: auto;
   z-index: 200;
 
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-100%);
+  transform: translateY(30px);
 
   transition:
     opacity 0.4s ease,
     visibility 0.4s ease,
     transform 0.4s ease;
 
+  @media (max-width: 499px) {
+    left: 0;
+  }
+
   &._open {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
+  &__body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+  }
+  &__container {
+    max-width: 500px;
+    padding: 0 12px;
+    margin: 0 auto;
+  }
   &__head {
     @include flex-between;
-    gap: 20px;
-    margin-bottom: 25px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
   &__logo {
-    width: 150px;
+    display: block;
+    width: 125px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
   &__close {
-    width: 25px;
-    height: 25px;
+    @include flex-center;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+
+    color: rgba(0, 0, 0, 0.56);
+
     transition: color 0.3s ease;
+
     @include hover {
-      color: var(--primary);
+      color: black;
     }
 
     svg {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 30px;
-
-    a {
-      font-size: 16px;
-
-      transition: color 0.3s ease;
-      @include hover {
-        color: var(--primary);
-      }
+      width: 24px;
+      height: 24px;
     }
   }
   &__spollers {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 30px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
   &__spoller {
   }
   &__spoller-btn {
     @include flex-between;
-    font-size: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    padding: 12px 0px;
 
-    transition: color 0.3s ease;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 137%;
+    color: rgba(0, 0, 0, 0.87);
 
     &._spoller-active {
       svg {
@@ -103,51 +115,115 @@
     }
 
     svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+
       transition: transform 0.3s ease;
     }
   }
+  &__spoller-body {
+    border: 1px solid #e9eaeb;
+    border-radius: 20px;
+    box-shadow:
+      0 4px 6px -2px rgba(10, 13, 18, 0.03),
+      0 12px 16px -4px rgba(10, 13, 18, 0.08);
+  }
+  &__spoller-head {
+    padding: 24px 16px;
+    border-bottom: 1px solid #e9eaeb;
+    font-size: 14px;
+    line-height: 143%;
+    color: rgba(0, 0, 0, 0.56);
+  }
   &__spoller-list {
+    padding: 25px 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 15px 0px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 12px;
+
+    .spoller-btn {
+      @include flex-between;
+      gap: 10px;
+
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+
+      &._spoller-active {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 6px;
 
     a {
       font-size: 16px;
+    }
+  }
+  &__list {
+    padding: 24px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    row-gap: 12px;
+
+    a {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 137%;
+      color: rgba(0, 0, 0, 0.56);
+
       transition: color 0.3s ease;
+
       @include hover {
-        color: var(--primary);
+        color: black;
       }
     }
   }
   &__contacts {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    padding: 24px 16px 16px 16px;
+  }
+  &__contacts-buttons {
+    @include flex-center;
+    gap: 50px;
+    margin-bottom: 24px;
   }
   &__contacts-btn {
     display: flex;
     align-items: center;
     gap: 8px;
-    width: fit-content;
 
     font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
+    font-size: 14px;
+    line-height: 157%;
+    color: rgba(0, 0, 0, 0.56);
 
     transition: color 0.3s ease;
+
     @include hover {
-      color: var(--primary);
+      color: black;
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
     }
+  }
+  &__btn-order {
+    width: 100%;
   }
 }

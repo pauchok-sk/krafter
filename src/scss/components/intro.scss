@@ -1,7 +1,5 @@
 .intro {
   position: relative;
-  &__slider {
-  }
   &__slide {
     position: relative;
     display: flex !important;
@@ -23,6 +21,9 @@
     }
     @include tablet {
       min-height: 450px;
+      text-align: center;
+      height: auto !important;
+      padding: 140px 0px 56px 0px;
     }
 
     &::before,
@@ -44,70 +45,86 @@
       opacity: 0.4;
       z-index: -2;
     }
+
+    .container {
+      @include tablet {
+        height: 100%;
+      }
+    }
+  }
+  &__wrapper {
+    @include flex-between;
+    gap: 30px;
+    @include tablet {
+      height: 100%;
+    }
   }
   &__slide-info {
     max-width: 690px;
+    @include tablet {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
   }
   &__slide-title {
     margin: 0px 0px 24px 0px;
+    @include tablet {
+      font-size: 48px !important;
+      line-height: 112% !important;
+      margin-bottom: 32px;
+    }
+    @include mobile {
+      font-size: 42px !important;
+    }
   }
   &__slide-content {
     font-size: 16px;
     line-height: 150%;
     margin: 0px 0px 40px 0px;
+    @include tablet {
+      margin-bottom: 32px;
+    }
   }
   &__buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 
+    @include tablet {
+      margin-top: auto;
+    }
+
     .btn-s {
+      @include tablet {
+        flex: 1;
+      }
       @include tablet-min {
         width: 100%;
+        flex: none;
       }
     }
   }
   &__adv {
-    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    transform: translateY(-50%);
-    top: 50%;
-    right: calc((100vw - 1775px) / 2);
-    z-index: 10;
-
-    @media (max-width: 1799px) {
-      right: 15px;
-    }
-    @include laptop-min {
-      position: static;
-      padding: 25px 15px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      background-color: var(--dark);
-      transform: translateY(0);
-    }
-    @include tablet-min {
-      grid-template-columns: 1fr;
+    @include tablet {
+      justify-content: center;
+      flex-direction: row;
+      margin-bottom: 120px;
     }
   }
   &__adv-item {
     position: relative;
-    @include laptop-min {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 15px;
-    }
 
-    @include hover {
-      .intro__adv-drop {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
+    @media (min-width: 992px) {
+      @include hover {
+        .intro__adv-drop {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
       }
     }
   }
@@ -118,27 +135,30 @@
     padding-right: 16px;
     width: 440px;
 
-    transform: translateX(-30px);
     opacity: 0;
     visibility: hidden;
 
-    transition: opacity .4s ease, visibility .4s ease, transform .4s ease;
-
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      transform 0.4s ease;
+    @media (min-width: 992px) {
+      transform: translateX(-30px);
+    }
     @include laptop-min {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
-      width: 100%;
-      padding-right: 0;
+      display: none;
     }
   }
   &__adv-inside {
     border-radius: 20px;
     padding: 24px;
     background-color: white;
-    @include tablet {
-      padding: 24px 15px;
+
+    .intro__adv-btn {
+      margin-bottom: 32px;
+      @media (min-width: 992px) {
+        display: none;
+      }
     }
   }
   &__adv-title {
@@ -146,6 +166,7 @@
     font-size: 18px;
     line-height: 144%;
     margin: 0px 0px 2px 0px;
+    color: rgba(0, 0, 0, 0.87);
   }
   &__adv-descr {
     font-size: 14px;
@@ -181,9 +202,23 @@
       border-color: var(--primary);
     }
 
+    @include tablet {
+      width: 48px;
+      height: 48px;
+    }
+
+    &._active {
+      color: black;
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
     svg {
       width: 40px;
       height: 40px;
+      @include tablet {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
   &__pagination-slider {
@@ -215,6 +250,150 @@
         flex-basis: 32px;
         background-color: rgba(255, 255, 255, 0.32);
       }
+    }
+  }
+}
+
+.intro-adv {
+  position: fixed;
+  inset: 54px 0px 0px 0px;
+  background-color: white;
+  overflow-y: auto;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.4s ease;
+
+  &._open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+
+  &__body {
+    padding: 12px;
+  }
+  &__close {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0px 0px 8px auto;
+
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background-color: var(--primary);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__btn {
+    @include flex-center;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary);
+    color: black;
+    margin-bottom: 32px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 121%;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 0px 0px 16px 0px;
+  }
+  &__content {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 127%;
+    color: rgba(0, 0, 0, 0.56);
+    margin: 0px 0px 32px 0px;
+    padding-right: 45px;
+  }
+  &__video-wrapper {
+    @include flex-center;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 500px;
+    aspect-ratio: 1/0.6;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+  &__video-btn {
+    @include flex-center;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #f5d897;
+    width: 70px;
+    height: 70px;
+    color: white;
+    z-index: 1;
+
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background-color: var(--primary);
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  &__nav {
+    margin-top: auto;
+    padding: 16px 16px 40px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  &__nav-title {
+    font-size: 12px;
+    line-height: 142%;
+    color: rgba(0, 0, 0, 0.32);
+    margin-bottom: 8px;
+  }
+  &__nav-btn {
+    @include flex-between;
+    gap: 15px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+    color: rgba(0, 0, 0, 0.87);
+
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
     }
   }
 }

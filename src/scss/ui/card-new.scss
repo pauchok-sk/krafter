@@ -39,11 +39,17 @@
     font-size: 20px;
     line-height: 130%;
     margin: 0px 0px 8px 0px;
+    @include tablet-min {
+      display: none;
+    }
   }
   &__date {
     font-weight: 500;
     font-size: 14px;
     line-height: 157%;
     color: rgba(255, 255, 255, 0.8);
+    @include tablet-min {
+      display: none;
+    }
   }
 }

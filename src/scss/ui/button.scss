@@ -32,8 +32,8 @@
     background-color 0.3s ease;
 
   @include hover {
-    background-color: rgb(19, 17, 17);
-    border-color: rgb(19, 17, 17);
+    background-color: #1F1F1F;
+    border-color: #1F1F1F;
 
     svg {
       transform: translateX(5px);
@@ -98,12 +98,17 @@
     }
   }
   @include tablet {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   svg {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
+
+    @include tablet {
+      width: 14px;
+      height: 14px;
+    }
   }
 }

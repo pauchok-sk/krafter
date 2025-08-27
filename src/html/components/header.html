@@ -112,15 +112,15 @@
           <a href="#" class="btn-s header__order-btn">
             <span>Заказать звонок</span>
             <svg>
-              <use xlink:href='img/icons/icons.svg#icon-next'></use>
+              <use xlink:href="img/icons/icons.svg#icon-next"></use>
             </svg>
           </a>
         </div>
       </div>
       <div class="header__burger-btn" id="burger-open">
-        <div></div>
-        <div></div>
-        <div></div>
+        <svg>
+          <use xlink:href="img/icons/icons.svg#icon-burger"></use>
+        </svg>
       </div>
     </div>
   </div>
@@ -128,93 +128,372 @@
 
 <div class="burger-overlay" id="burger-overlay"></div>
 <div class="burger" id="burger">
-  <div class="burger__head">
-    <a href="/" class="burger__logo">
-      <img src="@img/logo.svg" alt="logo" />
-    </a>
-    <div class="burger__close" id="burger-close">
-      <svg>
-        <use xlink:href="img/icons/icons.svg#icon-close"></use>
-      </svg>
-    </div>
-  </div>
-  <ul class="list burger__list">
-    <li><a href="#">Наши проекты</a></li>
-    <li><a href="#">Цены</a></li>
-    <li><a href="#">О компании</a></li>
-    <li><a href="#">Об HPL</a></li>
-    <li><a href="#">Отзывы</a></li>
-    <li><a href="#">Партнёрам</a></li>
-    <li><a href="#">Контакты</a></li>
-  </ul>
-  <div data-spollers class="burger__spollers">
-    <div class="burger__spoller">
-      <div data-spoller class="burger__spoller-btn">
-        <a href="#">Заказная продукция</a>
+  <div class="burger__body">
+    <div class="burger__head">
+      <a href="/" class="burger__logo">
+        <img src="@img/logo.svg" alt="logo" />
+      </a>
+      <div class="burger__close" id="burger-close">
         <svg>
-          <use xlink:href="img/icons/icons.svg#icon-down"></use>
+          <use xlink:href="img/icons/icons.svg#icon-close"></use>
         </svg>
       </div>
-      <div>
-        <ul class="list burger__spoller-list">
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-        </ul>
+    </div>
+    <div data-spollers class="burger__spollers">
+      <div class="burger__spoller">
+        <div data-spoller class="burger__spoller-btn">
+          <a href="#">Заказная продукция</a>
+          <svg>
+            <use xlink:href="img/icons/icons.svg#icon-down"></use>
+          </svg>
+        </div>
+        <div>
+          <div class="burger__spoller-body">
+            <div class="burger__spoller-head">
+              Производится серийно в стандартных размерах и дизайнах, быстро
+              доступна.
+            </div>
+            <ul data-spollers class="list burger__spoller-list">
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="burger__spoller">
+        <div data-spoller class="burger__spoller-btn">
+          <a href="#">Готовая продукция</a>
+          <svg>
+            <use xlink:href="img/icons/icons.svg#icon-down"></use>
+          </svg>
+        </div>
+        <div>
+          <div class="burger__spoller-body">
+            <div class="burger__spoller-head">
+              Производится серийно в стандартных размерах и дизайнах, быстро
+              доступна.
+            </div>
+            <ul data-spollers class="list burger__spoller-list">
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="burger__spoller">
+        <div data-spoller class="burger__spoller-btn">
+          <a href="#">Каталог декоров</a>
+          <svg>
+            <use xlink:href="img/icons/icons.svg#icon-down"></use>
+          </svg>
+        </div>
+        <div>
+          <div class="burger__spoller-body">
+            <div class="burger__spoller-head">
+              Производится серийно в стандартных размерах и дизайнах, быстро
+              доступна.
+            </div>
+            <ul data-spollers class="list burger__spoller-list">
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div data-spoller class="spoller-btn">
+                  <span>Сантехнические перегородки</span>
+                  <svg>
+                    <use xlink:href="img/icons/icons.svg#icon-down"></use>
+                  </svg>
+                </div>
+                <div>
+                  <ul class="list burger__sublist">
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                    <li><a href="#">Категория</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="burger__spoller">
-      <div data-spoller class="burger__spoller-btn">
-        <a href="#">Готовая продукция</a>
-        <svg>
-          <use xlink:href="img/icons/icons.svg#icon-down"></use>
-        </svg>
+    <ul class="list burger__list">
+      <li>
+        <a href="#">
+          <span>Наши проекты</span>
+        </a>
+      </li>
+      <li><a href="#">Цены</a></li>
+      <li><a href="#">О компании</a></li>
+      <li><a href="#">Об HPL</a></li>
+      <li><a href="#">Отзывы</a></li>
+      <li><a href="#">Партнёрам</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+    <div class="burger__contacts">
+      <div class="burger__contacts-buttons">
+        <a href="mailto:sale@hpl-krafter.ru" class="burger__contacts-btn">
+          <svg>
+            <use xlink:href="img/icons/icons.svg#icon-mail"></use>
+          </svg>
+          <span>sale@hpl-krafter.ru</span>
+        </a>
+        <a href="tel:88006006122" class="burger__contacts-btn">
+          <svg>
+            <use xlink:href="img/icons/icons.svg#icon-mail"></use>
+          </svg>
+          <span>8 800 600 61 22</span>
+        </a>
       </div>
-      <div>
-        <ul class="list burger__spoller-list">
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-        </ul>
-      </div>
+      <a href="#modal-order" class="btn-s burger__btn-order">Заказать звонок</a>
     </div>
-    <div class="burger__spoller">
-      <div data-spoller class="burger__spoller-btn">
-        <a href="#">Каталог декоров</a>
-        <svg>
-          <use xlink:href="img/icons/icons.svg#icon-down"></use>
-        </svg>
-      </div>
-      <div>
-        <ul class="list burger__spoller-list">
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-          <li><a href="#">Другая категория</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="burger__contacts">
-    <a href="mailto:sale@hpl-krafter.ru" class="burger__contacts-btn">
-      <svg>
-        <use xlink:href="img/icons/icons.svg#icon-mail"></use>
-      </svg>
-      <span>sale@hpl-krafter.ru</span>
-    </a>
-    <a href="tel:88006006122" class="burger__contacts-btn">
-      <svg>
-        <use xlink:href="img/icons/icons.svg#icon-mail"></use>
-      </svg>
-      <span>8 800 600 61 22</span>
-    </a>
   </div>
 </div>
