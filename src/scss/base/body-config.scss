@@ -21,7 +21,7 @@
 .sect-head {
   @include flex-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 56px;
   @include laptop-middle {
     margin-bottom: 32px;

@@ -1,0 +1,33 @@
+.s-projects {
+  overflow: hidden;
+  &__slider {
+    overflow: visible !important;
+    .swiper-slide {
+      width: 700px !important;
+      box-sizing: border-box;
+      opacity: 0.64;
+
+      transition: opacity .3s ease;
+
+      @include hover {
+        opacity: 1;
+      }
+
+      @include laptop-middle {
+        width: 500px !important;
+      }
+      @include tablet-min {
+        width: 350px !important;
+      }
+
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+    }
+  }
+  &__slider-nav {
+    @include tablet {
+      display: none;
+    }
+  }
+}
