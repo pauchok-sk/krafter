@@ -96,6 +96,17 @@ export default function sliders() {
       speed: 700,
       slidesPerView: 1,
       effect: "creative",
+      thumbs: {
+        swiper: thumbSwiper
+      },
+      navigation: {
+        prevEl: ".s-steps .slider-nav__btn._prev",
+        nextEl: ".s-steps .slider-nav__btn._next"
+      },
+      pagination: {
+        el: ".s-steps .slider-pagination",
+        clickable: true
+      },
       creativeEffect: {
         prev: {
           // Предыдущий слайд уходит ВВЕРХ
@@ -106,13 +117,13 @@ export default function sliders() {
         },
         next: {
           // Следующий слайд появляется СНИЗУ
-          translate: [0, 0.1, 0], // X, Y, Z - двигаем только по Y оси вниз
+          translate: [0, 0, 0], // X, Y, Z - двигаем только по Y оси вниз
           rotate: [0, 0, 0], // небольшой поворот
           opacity: 1, // полупрозрачность
           scale: 0.95, // немного уменьшаем
         },
         progressMultiplier: 1, // множитель прогресса
-        limitProgress: 3, // лимит прогресса
+        limitProgress: 2, // лимит прогресса
         shadowPerProgress: false, // тень в зависимости от прогресса
         perspective: false,
       },

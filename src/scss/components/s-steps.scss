@@ -16,6 +16,10 @@
 
     transition: color 0.3s ease;
 
+    &.swiper-slide-thumb-active {
+      color: rgba(0, 0, 0, 0.87);
+    }
+
     @include hover {
       color: rgba(0, 0, 0, 0.87);
     }
@@ -44,8 +48,12 @@
     }
   }
   &__slider {
-    margin-top: 52px;
+    margin-top: 62px;
     overflow: visible !important;
+
+    @include tablet-min {
+      margin-top: 40px;
+    }
   }
   &__slide {
     border-radius: 20px;
@@ -56,12 +64,19 @@
     background-color: white;
     height: fit-content !important;
     width: 100% !important;
+    box-sizing: border-box;
 
     &.swiper-slide-next {
       margin-top: 30px;
+      @include tablet-min {
+        margin-top: 22px;
+      }
 
       & + .swiper-slide {
         margin-top: 60px;
+        @include tablet-min {
+          margin-top: 44px;
+        }
       }
     }
     &.swiper-slide-active {
@@ -71,16 +86,39 @@
     }
   }
   &__slide-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    @include laptop-min {
+      flex-wrap: wrap;
+    }
   }
   &__slide-body {
     display: flex;
     flex-direction: column;
     padding: 40px;
+    flex: 1;
 
     font-size: 24px;
     line-height: 125%;
+
+    @include desktop {
+      font-size: 20px;
+      padding: 30px;
+    }
+    @include laptop-middle {
+      font-size: 18px;
+    }
+    @include laptop-min {
+      flex: none;
+      width: 100%;
+    }
+    @include tablet {
+      font-size: 16px;
+      line-height: 137%;
+      padding: 32px 16px;
+    }
+    @include tablet-min {
+      padding: 16px;
+    }
   }
   &__slide-num {
     font-weight: 500;
@@ -95,9 +133,40 @@
     max-width: 735px;
     margin: 0px 0px 16px 0px;
   }
+  &__slide-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      gap: 12px;
+
+      @include tablet {
+        gap: 6px;
+        padding-left: 6px;
+      }
+
+      &::before {
+        content: "";
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        background-color: currentColor;
+
+        @include tablet {
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
   &__slide-bottom-content {
     padding-top: 20px;
     margin-top: auto;
+    max-width: 630px;
   }
   &__slide-btn {
     margin-top: 32px;
@@ -119,6 +188,9 @@
         transform: translateX(5px);
       }
     }
+    @include tablet {
+      display: none;
+    }
 
     svg {
       width: 14px;
@@ -130,6 +202,13 @@
   &__slide-gallery {
     aspect-ratio: 1/0.65;
     background-color: var(--primary);
+    flex: 1;
+
+    @include laptop-min {
+      flex: none;
+      width: 100%;
+      aspect-ratio: 1/0.76;
+    }
 
     img {
       display: block;
@@ -140,6 +219,13 @@
       opacity: 0;
 
       transition: opacity 0.3s ease 0.1s;
+    }
+  }
+  &__slider-nav {
+    @include flex-between;
+    margin-top: 32px;
+    @include tablet {
+      margin-top: 16px;
     }
   }
 }
