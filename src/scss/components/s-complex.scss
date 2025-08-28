@@ -1,0 +1,133 @@
+.s-complex {
+  overflow: hidden;
+  padding-bottom: 70px;
+  background-color: black;
+  color: white;
+  @include laptop-min {
+    padding-top: 32px;
+  }
+  &__title {
+    max-width: 1330px;
+    margin: 0px 0px 56px 0px;
+    @include laptop-min {
+      margin-bottom: 32px;
+    }
+  }
+  &__slider {
+    overflow: visible !important;
+  }
+  &__slide {
+    padding: 40px;
+    box-sizing: border-box;
+    width: 1350px !important;
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex !important;
+    min-height: 615px;
+    align-items: flex-end;
+    z-index: 1;
+    opacity: 0.32;
+
+    transition: opacity 0.3s ease;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+
+    @include laptop-middle {
+      padding: 30px;
+      min-height: 500px;
+    }
+    @include laptop-min {
+      padding: 24px;
+      min-height: 400px;
+    }
+    @include tablet {
+      width: 350px !important;
+      min-height: 385px;
+      display: flex;
+      align-items: start;
+      padding: 16px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.94) 100%
+      );
+      z-index: -1;
+
+      @include tablet {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.94) 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+      }
+    }
+  }
+  &__slide-body {
+  }
+  &__slide-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 125%;
+    max-width: 740px;
+    margin: 0;
+    @include laptop-min {
+      font-size: 24px;
+    }
+    @include tablet {
+      font-size: 18px;
+      line-height: 144%;
+    }
+  }
+  &__slide-subcontent {
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 640px;
+    margin: 16px 0px 0px 0px;
+  }
+  &__bottom {
+    @include flex-between;
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 16px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__btn {
+    font-size: 14px;
+    padding: 10px 20px;
+
+    svg {
+      width: 14px !important;
+      height: 14px !important;
+    }
+  }
+  &__slider-nav {
+    display: flex;
+    gap: 8px;
+    @include laptop-min {
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .slider-pagination {
+      @media (min-width: 992px) {
+        display: none;
+      }
+    }
+  }
+}

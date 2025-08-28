@@ -24,6 +24,13 @@
       background-color: rgba(0, 0, 0, 0.2);
     }
 
+    &._white {
+      background-color: rgba(246, 246, 246, 0.24);
+      @include hover {
+        background-color: rgba(246, 246, 246, 0.44);
+      }
+    }
+
     &.swiper-button-disabled {
       pointer-events: none;
       opacity: 0.3;
@@ -39,6 +46,21 @@
 .slider-pagination {
   @include flex-center;
   gap: 8px;
+
+  &._white {
+    .swiper-pagination-bullet {
+      background-color: rgba(255, 255, 255, 0.16);
+
+      @include hover {
+        background-color: rgba(255, 255, 255, 0.32);
+      }
+
+      &.swiper-pagination-bullet-active {
+        flex-basis: 32px;
+        background-color: rgba(255, 255, 255, 0.32);
+      }
+    }
+  }
 
   .swiper-pagination-bullet {
     display: block;
