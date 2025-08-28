@@ -54,9 +54,9 @@ export default function sliders() {
       speed: 900,
       slidesPerView: "auto",
       spaceBetween: 8,
-      // autoplay: {
-      //   delay: 3200,
-      // },
+      autoplay: {
+        delay: 3200,
+      },
       initialSlide: 2,
       centeredSlides: true,
       navigation: {
@@ -72,6 +72,49 @@ export default function sliders() {
           slidesPerView: "auto",
           spaceBetween: 20,
         },
+      },
+    });
+  }
+
+  const stepsSlider = document.querySelector(".s-steps__slider");
+  if (stepsSlider) {
+    const stepsNavSlider = document.querySelector(".s-steps__nav-slider");
+
+    const thumbSwiper = new Swiper(stepsNavSlider, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 8,
+      breakpoints: {
+        768: {
+          slidesPerView: "auto",
+          spaceBetween: 16,
+        },
+      },
+    });
+
+    const swiper = new Swiper(stepsSlider, {
+      speed: 700,
+      slidesPerView: 1,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          // Предыдущий слайд уходит ВВЕРХ
+          translate: [0, -30, 0], // X, Y, Z - двигаем только по Y оси вверх
+          rotate: [0, 0, 0], // небольшой поворот для эффекта
+          opacity: 1, // полупрозрачность
+          scale: 0.95, // немного уменьшаем
+        },
+        next: {
+          // Следующий слайд появляется СНИЗУ
+          translate: [0, 0.1, 0], // X, Y, Z - двигаем только по Y оси вниз
+          rotate: [0, 0, 0], // небольшой поворот
+          opacity: 1, // полупрозрачность
+          scale: 0.95, // немного уменьшаем
+        },
+        progressMultiplier: 1, // множитель прогресса
+        limitProgress: 3, // лимит прогресса
+        shadowPerProgress: false, // тень в зависимости от прогресса
+        perspective: false,
       },
     });
   }
