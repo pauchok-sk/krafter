@@ -34,10 +34,96 @@
       line-height: 150%;
       color: rgba(255, 255, 255, 0.54);
 
-      transition: color .3s ease;
+      transition: color 0.3s ease;
       @include hover {
         color: white;
       }
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+
+    font-size: 12px;
+    line-height: 167%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.54);
+
+    @include tablet {
+      margin-top: 48px;
+
+      font-size: 11px;
+      line-height: 136%;
+    }
+  }
+  &__bottom-info {
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &__bottom-content {
+    margin: 0px 0px 24px 0px;
+
+    @include tablet {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+    }
+  }
+  &__bottom-flex {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @include tablet {
+      gap: 24px;
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 157%;
+      letter-spacing: normal;
+      flex-shrink: 0;
+
+      transition: color 0.3s ease;
+
+      @include hover {
+        color: white;
+      }
+      @include tablet {
+        font-size: 11px;
+        line-height: 136%;
+        letter-spacing: -0.03em;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    gap: 16px;
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &__social-btn {
+    display: block;
+    width: 24px;
+
+    transition: opacity 0.3s ease;
+    @include hover {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 100%;
     }
   }
 }
