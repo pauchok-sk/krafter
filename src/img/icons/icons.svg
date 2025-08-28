@@ -62,6 +62,9 @@
 <path d="M7 17L14 9.99886L7 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol><symbol viewBox="0 0 41 40" fill="none" id="icon-play" xmlns="http://www.w3.org/2000/svg">
 <path d="M30.4551 18.2289C32.7326 19.4981 32.7409 21.0946 30.4551 22.5295L12.7935 34.4409C10.5743 35.6252 9.06711 34.9259 8.90889 32.3634L8.83395 7.43304C8.78399 5.07258 10.7284 4.40566 12.5811 5.53739L30.4551 18.2289Z" fill="currentColor" stroke="currentColor" stroke-width="1.4"/>
+</symbol><symbol viewBox="0 0 16 16" fill="none" id="icon-play-circle" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.7" y="0.7" width="14.6" height="14.6" rx="7.3" stroke="currentColor" stroke-width="1.4"/>
+<path d="M11.06 7.52771C11.6456 7.86615 11.6477 8.29189 11.06 8.67453L6.5184 11.8509C5.94776 12.1667 5.5602 11.9802 5.51951 11.2969L5.50024 4.64881C5.4874 4.01935 5.98737 3.84151 6.4638 4.1433L11.06 7.52771Z" fill="currentColor"/>
 </symbol><symbol viewBox="0 0 20 20" fill="none" id="icon-prev" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.5918 3.225L13.1168 1.75L4.8668 10L13.1168 18.25L14.5918 16.775L7.8168 10L14.5918 3.225Z" fill="currentColor"/>
 </symbol><symbol viewBox="0 0 24 24" fill="none" id="icon-search" xmlns="http://www.w3.org/2000/svg">

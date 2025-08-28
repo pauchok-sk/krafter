@@ -97,15 +97,15 @@ export default function sliders() {
       slidesPerView: 1,
       effect: "creative",
       thumbs: {
-        swiper: thumbSwiper
+        swiper: thumbSwiper,
       },
       navigation: {
         prevEl: ".s-steps .slider-nav__btn._prev",
-        nextEl: ".s-steps .slider-nav__btn._next"
+        nextEl: ".s-steps .slider-nav__btn._next",
       },
       pagination: {
         el: ".s-steps .slider-pagination",
-        clickable: true
+        clickable: true,
       },
       creativeEffect: {
         prev: {
@@ -126,6 +126,39 @@ export default function sliders() {
         limitProgress: 2, // лимит прогресса
         shadowPerProgress: false, // тень в зависимости от прогресса
         perspective: false,
+      },
+    });
+  }
+
+  const advSlider = document.querySelector(".s-adv__slider");
+
+  if (advSlider) {
+    const swiper = new Swiper(advSlider, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 8,
+      // autoplay: {
+      //   delay: 3500,
+      // },
+      initialSlide: 1,
+      centeredSlides: true,
+      navigation: {
+        nextEl: ".s-adv .slider-nav__btn._next",
+        prevEl: ".s-adv .slider-nav__btn._prev",
+      },
+      pagination: {
+        el: ".s-adv .slider-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1200: {
+          slidesPerView: "auto",
+          spaceBetween: 40,
+        },
+        576: {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+        },
       },
     });
   }

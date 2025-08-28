@@ -13,10 +13,17 @@
   @include laptop-middle {
     margin: 80px 0px;
   }
-  @include laptop-min {
-    margin: 60px 0px;
+}
+.sect-p {
+  padding: 120px 0px;
+  @include laptop {
+    padding: 100px 0px;
+  }
+  @include laptop-middle {
+    padding: 80px 0px;
   }
 }
+
 
 .sect-head {
   @include flex-between;

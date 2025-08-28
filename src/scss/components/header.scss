@@ -1,7 +1,9 @@
 .header-top {
+  position: relative;
   backdrop-filter: blur(17.899999618530273px);
   background: rgba(0, 0, 0, 0.8);
   color: white;
+  z-index: 100;
   @include laptop-min {
     display: none;
   }
@@ -89,7 +91,7 @@
 .header {
   position: sticky;
   top: 0;
-  padding: 30px 0px;
+  // padding: 30px 0px;
   background-color: white;
   z-index: 100;
   transition: transform 0.4s ease;
@@ -98,7 +100,7 @@
     transform: translateY(-100%);
   }
 
-  @include laptop-middle {
+  @include laptop-min {
     padding: 15px 0px;
   }
   &__wrapper {
@@ -149,6 +151,10 @@
       display: none;
     }
 
+    [data-header-drop] {
+      padding: 35px 0px;
+    }
+
     a {
       display: flex;
       align-items: center;
@@ -188,7 +194,7 @@
     align-items: center;
     gap: 8px;
     @include laptop-min {
-      gap: 24px
+      gap: 24px;
     }
   }
   &__btn {
@@ -261,6 +267,161 @@
     svg {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  &__drop-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(65px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      top 0.4s ease;
+
+    z-index: 99;
+
+    &._active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__drop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 168px;
+    background-color: white;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 40px 0px;
+    overflow-y: auto;
+    z-index: 100;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      transform 0.4s ease,
+      top 0.4s ease;
+
+    &._active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__drop-title {
+    display: flex;
+    align-items: start;
+    gap: 7px;
+    margin: 0px 0px 48px 0px;
+
+    span {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+      background: url("@img/warn.svg") 0 0 / 100% auto no-repeat;
+
+      @include hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        padding: 4px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border-radius: 4px;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+  &__drop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+    row-gap: 40px;
+    @include laptop {
+      gap: 40px;
+    }
+    @include laptop-middle {
+      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__drop-col {
+  }
+  &__drop-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  &__drop-spoller-btn {
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--primary);
+
+      a {
+        color: var(--primary);
+      }
+    }
+
+    &._spoller-active {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+  }
+  &__drop-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 24px;
+    padding-top: 12px;
+
+    a {
+      color: rgba(0, 0, 0, 0.54);
     }
   }
 }
