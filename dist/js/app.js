@@ -223,6 +223,13 @@
         const da = new DynamicAdapt("max");
         da.init();
     }
+    function search() {
+        const search = document.querySelector("#search");
+        if (search) {
+            document.querySelector("#search-overlay");
+            document.querySelector("#search-btn");
+        }
+    }
     function sliders() {
         const introSlider = document.querySelector(".intro__slider");
         if (introSlider) {
@@ -631,5 +638,6 @@
     introAdv();
     headerScroll();
     headerDrop();
+    search();
     Fancybox.bind("[data-fancybox]", {});
 })();
