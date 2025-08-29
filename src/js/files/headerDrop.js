@@ -7,17 +7,6 @@ export default function headerDrop() {
     const buttons = document.querySelectorAll("[data-header-drop]");
     const overlay = document.querySelector(".header__drop-overlay");
 
-    // overlays.forEach((overlay) => {
-    //   overlay.addEventListener("mouseenter", (e) => {
-    //     if (overlay.classList.contains("_active")) {
-    //       const currentDrop = overlay.closest("[data-header-drop]").querySelector(".header__drop")
-          
-    //       // overlay.classList.remove("_active");
-    //       // currentDrop.classList.remove("_active")
-    //     }
-    //   });
-    // });
-
     buttons.forEach((btn) => {
       btn.addEventListener("mouseenter", handleOpen);
       btn.addEventListener("mouseleave", handleClose);
