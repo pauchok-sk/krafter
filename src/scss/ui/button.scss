@@ -42,12 +42,11 @@
 
   &._white {
     background-color: white;
-    border-color: white;
+    border: none;
     color: var(--dark);
 
     @include hover {
       background-color: rgba(255, 255, 255, 0.8);
-      border-color: rgba(255, 255, 255, 0.8);
     }
   }
   &._gray {
@@ -75,7 +74,7 @@
 
   &._outline-white {
     background-color: transparent;
-    border-color: white;
+    border-color: white !important;
     color: white;
 
     @include hover {

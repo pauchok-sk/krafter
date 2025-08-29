@@ -4,9 +4,9 @@ export default function sliders() {
   if (introSlider) {
     const swiper = new Swiper(introSlider, {
       speed: 900,
-      autoplay: {
-        delay: 4000,
-      },
+      // autoplay: {
+      //   delay: 10000,
+      // },
       pagination: {
         el: ".intro__pagination-slider",
         clickable: true,
@@ -170,9 +170,9 @@ export default function sliders() {
       speed: 900,
       slidesPerView: "auto",
       spaceBetween: 8,
-      // autoplay: {
-      //   delay: 3200,
-      // },
+      autoplay: {
+        delay: 3200,
+      },
       navigation: {
         nextEl: ".s-complex .slider-nav__btn._next",
         prevEl: ".s-complex .slider-nav__btn._prev",

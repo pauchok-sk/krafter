@@ -5,11 +5,18 @@ export default function headerDrop() {
     const header = document.querySelector(".header");
 
     const buttons = document.querySelectorAll("[data-header-drop]");
-    const overlays = document.querySelectorAll(".header__drop-overlay");
+    const overlay = document.querySelector(".header__drop-overlay");
 
-    overlays.forEach((overlay) => {
-      overlay.addEventListener("mouseenter", handleClose);
-    });
+    // overlays.forEach((overlay) => {
+    //   overlay.addEventListener("mouseenter", (e) => {
+    //     if (overlay.classList.contains("_active")) {
+    //       const currentDrop = overlay.closest("[data-header-drop]").querySelector(".header__drop")
+          
+    //       // overlay.classList.remove("_active");
+    //       // currentDrop.classList.remove("_active")
+    //     }
+    //   });
+    // });
 
     buttons.forEach((btn) => {
       btn.addEventListener("mouseenter", handleOpen);
@@ -29,7 +36,6 @@ export default function headerDrop() {
 
     function handleOpen(e) {
       const drop = e.target.querySelector(".header__drop");
-      const overlay = e.target.querySelector(".header__drop-overlay");
 
       overlay.classList.add("_active");
       drop.classList.add("_active");
@@ -39,9 +45,8 @@ export default function headerDrop() {
 
     function handleClose() {
       const drop = document.querySelector(".header__drop._active");
-      const overlay = document.querySelector(".header__drop-overlay._active");
 
-      overlay?.classList.remove("_active");
+      overlay.classList.remove("_active");
       drop?.classList.remove("_active");
     }
 

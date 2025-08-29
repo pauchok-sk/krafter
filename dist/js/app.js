@@ -39,10 +39,7 @@
         if (drops.length) {
             const header = document.querySelector(".header");
             const buttons = document.querySelectorAll("[data-header-drop]");
-            const overlays = document.querySelectorAll(".header__drop-overlay");
-            overlays.forEach(overlay => {
-                overlay.addEventListener("mouseenter", handleClose);
-            });
+            const overlay = document.querySelector(".header__drop-overlay");
             buttons.forEach(btn => {
                 btn.addEventListener("mouseenter", handleOpen);
                 btn.addEventListener("mouseleave", handleClose);
@@ -54,15 +51,13 @@
             });
             function handleOpen(e) {
                 const drop = e.target.querySelector(".header__drop");
-                const overlay = e.target.querySelector(".header__drop-overlay");
                 overlay.classList.add("_active");
                 drop.classList.add("_active");
                 updateSizeDrop(drop, overlay);
             }
             function handleClose() {
                 const drop = document.querySelector(".header__drop._active");
-                const overlay = document.querySelector(".header__drop-overlay._active");
-                overlay?.classList.remove("_active");
+                overlay.classList.remove("_active");
                 drop?.classList.remove("_active");
             }
             function updateSizeDrop(drop, overlay) {
@@ -233,9 +228,6 @@
         if (introSlider) {
             new Swiper(introSlider, {
                 speed: 900,
-                autoplay: {
-                    delay: 4e3
-                },
                 pagination: {
                     el: ".intro__pagination-slider",
                     clickable: true
@@ -380,6 +372,9 @@
                 speed: 900,
                 slidesPerView: "auto",
                 spaceBetween: 8,
+                autoplay: {
+                    delay: 3200
+                },
                 navigation: {
                     nextEl: ".s-complex .slider-nav__btn._next",
                     prevEl: ".s-complex .slider-nav__btn._prev"

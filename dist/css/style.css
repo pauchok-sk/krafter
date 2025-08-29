@@ -255,7 +255,7 @@ body {
 }
 .btn-s._white {
   background-color: #fff;
-  border-color: #fff;
+  border: none;
   color: var(--dark)
 }
 .btn-s._gray {
@@ -270,7 +270,7 @@ body {
 }
 .btn-s._outline-white {
   background-color: rgba(0,0,0,0);
-  border-color: #fff;
+  border-color: #fff!important;
   color: #fff
 }
 .btn-s svg {
@@ -388,7 +388,7 @@ body {
   font-weight: 500;
   font-size: 18px;
   line-height: 144%;
-  margin-bottom: 4px;
+  margin: 0 0 4px 0;
   transition: color .3s ease
 }
 .card-product__descr {
@@ -648,7 +648,7 @@ body {
   position: absolute;
   content: "";
   inset: 0;
-  background: linear-gradient(180deg,rgba(0,0,0,.2) 0,rgba(0,0,0,.2) 100%);
+  background: linear-gradient(180deg,rgba(0,0,0,0) 77.94%,rgba(0,0,0,.6) 100%);
   z-index: -1
 }
 .card-new__link {
@@ -1213,7 +1213,7 @@ body {
   align-items: center;
   padding: 40px 0;
   color: #fff;
-  min-height: 875px;
+  min-height: 800px;
   box-sizing: border-box;
   z-index: 1
 }
@@ -2030,7 +2030,7 @@ body {
 }
 @media (max-width:1539px) {
   .intro__slide {
-    min-height: 780px
+    min-height: 750px
   }
   .s-steps__slide-body {
     font-size: 20px;
@@ -2654,8 +2654,7 @@ body {
     transform: translateX(5px)
   }
   .btn-s._white:hover {
-    background-color: hsla(0,0%,100%,.8);
-    border-color: hsla(0,0%,100%,.8)
+    background-color: hsla(0,0%,100%,.8)
   }
   .btn-s._gray:hover {
     background-color: var(--dark);
@@ -2828,8 +2827,7 @@ body {
     transform: translateX(5px)
   }
   .btn-s._white:active {
-    background-color: hsla(0,0%,100%,.8);
-    border-color: hsla(0,0%,100%,.8)
+    background-color: hsla(0,0%,100%,.8)
   }
   .btn-s._gray:active {
     background-color: var(--dark);
