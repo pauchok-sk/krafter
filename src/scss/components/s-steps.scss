@@ -217,8 +217,6 @@
       object-fit: cover;
 
       opacity: 0;
-
-      transition: opacity 0.3s ease 0.1s;
     }
   }
   &__slider-nav {
@@ -226,6 +224,15 @@
     margin-top: 32px;
     @include tablet {
       margin-top: 16px;
+    }
+  }
+  &__btn {
+    width: 500px;
+    max-width: 100%;
+    margin: 16px auto 0px auto;
+
+    @media (min-width: 992px) {
+      display: none;
     }
   }
 }

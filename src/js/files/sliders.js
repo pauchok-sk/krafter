@@ -4,13 +4,21 @@ export default function sliders() {
   if (introSlider) {
     const swiper = new Swiper(introSlider, {
       speed: 900,
-      // autoplay: {
-      //   delay: 10000,
-      // },
+      autoplay: {
+        delay: 10000,
+      },
       pagination: {
         el: ".intro__pagination-slider",
         clickable: true,
       },
+    });
+
+    introSlider.addEventListener("mouseenter", () => {
+      swiper.autoplay.stop();
+    });
+
+    introSlider.addEventListener("mouseleave", () => {
+      swiper.autoplay.start();
     });
   }
 
@@ -73,6 +81,14 @@ export default function sliders() {
           spaceBetween: 20,
         },
       },
+    });
+
+    projectsSlider.addEventListener("mouseenter", () => {
+      swiper.autoplay.stop();
+    });
+
+    projectsSlider.addEventListener("mouseleave", () => {
+      swiper.autoplay.start();
     });
   }
 

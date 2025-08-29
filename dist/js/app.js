@@ -226,12 +226,21 @@
     function sliders() {
         const introSlider = document.querySelector(".intro__slider");
         if (introSlider) {
-            new Swiper(introSlider, {
+            const swiper = new Swiper(introSlider, {
                 speed: 900,
+                autoplay: {
+                    delay: 1e4
+                },
                 pagination: {
                     el: ".intro__pagination-slider",
                     clickable: true
                 }
+            });
+            introSlider.addEventListener("mouseenter", () => {
+                swiper.autoplay.stop();
+            });
+            introSlider.addEventListener("mouseleave", () => {
+                swiper.autoplay.start();
             });
         }
         const recSliders = document.querySelectorAll(".s-rec__slider");
@@ -261,7 +270,7 @@
         });
         const projectsSlider = document.querySelector(".s-projects__slider");
         if (projectsSlider) {
-            new Swiper(projectsSlider, {
+            const swiper = new Swiper(projectsSlider, {
                 speed: 900,
                 slidesPerView: "auto",
                 spaceBetween: 8,
@@ -284,6 +293,12 @@
                         spaceBetween: 20
                     }
                 }
+            });
+            projectsSlider.addEventListener("mouseenter", () => {
+                swiper.autoplay.stop();
+            });
+            projectsSlider.addEventListener("mouseleave", () => {
+                swiper.autoplay.start();
             });
         }
         const stepsSlider = document.querySelector(".s-steps__slider");

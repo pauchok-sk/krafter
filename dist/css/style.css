@@ -558,7 +558,7 @@ body {
   z-index: -2
 }
 .card-video::before {
-  background: linear-gradient(180deg,rgba(0,0,0,.1) 0,rgba(0,0,0,.6) 100%)
+  background: linear-gradient(180deg,rgba(0,0,0,.2) 25%,rgba(0,0,0,.9) 100%)
 }
 .card-video__time {
   position: absolute;
@@ -582,7 +582,10 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  z-index: -3
+  z-index: -3;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease
 }
 .card-video__link {
   position: absolute;
@@ -664,7 +667,10 @@ body {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  z-index: -2
+  z-index: -2;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease
 }
 .card-new__body {
   transition: opacity .3s ease
@@ -1752,14 +1758,18 @@ body {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity .3s ease .1s
+  opacity: 0
 }
 .s-steps__slider-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 32px
+}
+.s-steps__btn {
+  width: 500px;
+  max-width: 100%;
+  margin: 16px auto 0 auto
 }
 .s-adv {
   background-color: #000;
@@ -1993,6 +2003,9 @@ body {
   .s-center__btn-all span:nth-child(2) {
     display: none
   }
+  .s-steps__btn {
+    display: none
+  }
   .s-adv__slide-btn svg:last-child {
     display: none
   }
@@ -2146,7 +2159,8 @@ body {
 @media (max-width:1099px) {
   .card-video {
     padding: 0;
-    display: block
+    display: flex;
+    flex-direction: column
   }
   .card-video__gallery {
     display: flex;
@@ -2166,7 +2180,8 @@ body {
     background-color: #fff;
     width: 100%;
     max-width: none;
-    color: #000
+    color: #000;
+    flex: 1
   }
   .card-video__date {
     color: rgba(0,0,0,.54);
@@ -2510,7 +2525,8 @@ body {
     width: 100%
   }
   .footer__bottom-flex {
-    gap: 24px
+    gap: 24px;
+    align-items: flex-end
   }
   .footer__bottom-flex a {
     font-size: 11px;
@@ -2713,11 +2729,19 @@ body {
   .card-article__title:hover {
     color: var(--primary)
   }
+  .card-video:hover .card-video__img {
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07)
+  }
   .card-video__body:hover {
     opacity: .8
   }
   .card-video__play-btn:hover {
     background-color: hsla(0,0%,100%,.3)
+  }
+  .card-new:hover .card-new__img {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08)
   }
   .card-new__body:hover {
     opacity: .7
@@ -2886,11 +2910,19 @@ body {
   .card-article__title:active {
     color: var(--primary)
   }
+  .card-video:active .card-video__img {
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07)
+  }
   .card-video__body:active {
     opacity: .8
   }
   .card-video__play-btn:active {
     background-color: hsla(0,0%,100%,.3)
+  }
+  .card-new:active .card-new__img {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08)
   }
   .card-new__body:active {
     opacity: .7

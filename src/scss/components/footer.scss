@@ -84,6 +84,7 @@
 
     @include tablet {
       gap: 24px;
+      align-items: flex-end;
     }
 
     a {
