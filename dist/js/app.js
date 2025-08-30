@@ -277,6 +277,17 @@
                 swiper.autoplay.start();
             });
         }
+        const productSliders = document.querySelectorAll(".card-product__slider");
+        if (productSliders.length) productSliders.forEach(slider => {
+            new Swiper(slider, {
+                speed: 900,
+                spaceBetween: 15,
+                pagination: {
+                    el: slider.closest(".card-product").querySelector(".slider-pagination"),
+                    clickable: true
+                }
+            });
+        });
         const recSliders = document.querySelectorAll(".s-rec__slider");
         if (recSliders.length) recSliders.forEach(slider => {
             new Swiper(slider, {

@@ -22,6 +22,24 @@ export default function sliders() {
     });
   }
 
+  const productSliders = document.querySelectorAll(".card-product__slider");
+
+  if (productSliders.length) {
+    productSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 15,
+        // autoplay: {
+        //   delay: 3000,
+        // },
+        pagination: {
+          el: slider.closest(".card-product").querySelector(".slider-pagination"),
+          clickable: true
+        }
+      });
+    });
+  }
+
   const recSliders = document.querySelectorAll(".s-rec__slider");
 
   if (recSliders.length) {

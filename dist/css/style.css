@@ -353,21 +353,25 @@ body {
   display: flex;
   flex-direction: column
 }
-.card-product__gallery {
+.card-product__slider {
+  border-radius: 20px;
+  width: 100%
+}
+.card-product__slider-pagination {
+  margin: 8px 0 16px 0
+}
+.card-product__slide {
   position: relative;
   width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 1/1.24;
-  z-index: 1;
-  margin-bottom: 16px;
-  transition: opacity .3s ease
+  height: auto;
+  aspect-ratio: 1/1.32;
+  z-index: 1
 }
-.card-product__gallery img {
-  position: absolute;
+.card-product__slide img {
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 20px;
   -o-object-fit: cover;
   object-fit: cover;
   z-index: -2
@@ -377,19 +381,19 @@ body {
   padding: 10px 16px;
   font-weight: 500;
   font-size: 16px;
-  border-radius: 0 20px;
+  border-radius: 0 20px 0 0;
   line-height: 150%;
   box-shadow: 0 0 53px 0 rgba(32,31,37,.03);
   background-color: var(--primary);
   left: 0;
-  bottom: 0
+  bottom: 0;
+  z-index: 10
 }
 .card-product__title {
   font-weight: 500;
   font-size: 18px;
   line-height: 144%;
-  margin: 0 0 4px 0;
-  transition: color .3s ease
+  margin: 0 0 4px 0
 }
 .card-product__descr {
   display: -webkit-box;
@@ -1659,11 +1663,11 @@ body {
 .s-rec__slider {
   overflow: visible!important
 }
-.s-rec__slider .swiper-slide {
+.s-rec__slide {
   height: auto!important;
   width: 405px!important
 }
-.s-rec__slider .swiper-slide .card-product {
+.s-rec__slide .card-product {
   height: 100%
 }
 .s-center {
@@ -2406,7 +2410,7 @@ body {
   .intro__adv-drop {
     display: none
   }
-  .s-rec__slider .swiper-slide {
+  .s-rec__slide {
     width: 300px!important
   }
   .s-center__btn-all span:first-child {
@@ -2508,6 +2512,17 @@ body {
   }
   .s-title {
     font-size: 28px
+  }
+  .card-product__slider-pagination {
+    margin: 4px 0 8px 0;
+    gap: 4px!important
+  }
+  .card-product__slider-pagination .swiper-pagination-bullet {
+    flex-basis: 4px!important;
+    height: 4px!important
+  }
+  .card-product__slider-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    flex-basis: 16px!important
   }
   .card-product__size {
     font-size: 14px;
@@ -2755,7 +2770,7 @@ body {
     width: 100%;
     flex: none
   }
-  .s-rec__slider .swiper-slide {
+  .s-rec__slide {
     width: 176px!important
   }
   .s-center__grid {
@@ -2835,12 +2850,6 @@ body {
   }
   .dropdown__list a:hover {
     opacity: .7
-  }
-  .card-product__gallery:hover {
-    opacity: .8
-  }
-  .card-product__title:hover {
-    color: var(--primary)
   }
   .card-product__order:hover svg {
     -webkit-transform: translateX(5px);
@@ -3023,12 +3032,6 @@ body {
   }
   .dropdown__list a:active {
     opacity: .7
-  }
-  .card-product__gallery:active {
-    opacity: .8
-  }
-  .card-product__title:active {
-    color: var(--primary)
   }
   .card-product__order:active svg {
     -webkit-transform: translateX(5px);

@@ -53,20 +53,19 @@
   }
   &__slider {
     overflow: visible !important;
+  }
+  &__slide {
+    height: auto !important;
+    width: 405px !important;
+    @include laptop-min {
+      width: 300px !important;
+    }
+    @include tablet-min {
+      width: 176px !important;
+    }
 
-    .swiper-slide {
-      height: auto !important;
-      width: 405px !important;
-      @include laptop-min {
-        width: 300px !important;
-      }
-      @include tablet-min {
-        width: 176px !important;
-      }
-
-      .card-product {
-        height: 100%;
-      }
+    .card-product {
+      height: 100%;
     }
   }
 }
