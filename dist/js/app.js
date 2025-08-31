@@ -290,7 +290,7 @@
         });
         const recSliders = document.querySelectorAll(".s-rec__slider");
         if (recSliders.length) recSliders.forEach(slider => {
-            new Swiper(slider, {
+            const swiper = new Swiper(slider, {
                 speed: 900,
                 slidesPerView: "auto",
                 spaceBetween: 12,
@@ -311,6 +311,12 @@
                         spaceBetween: 20
                     }
                 }
+            });
+            slider.addEventListener("mouseenter", () => {
+                swiper.autoplay.stop();
+            });
+            slider.addEventListener("mouseleave", () => {
+                swiper.autoplay.start();
             });
         });
         const projectsSlider = document.querySelector(".s-projects__slider");

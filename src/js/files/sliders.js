@@ -33,9 +33,11 @@ export default function sliders() {
         //   delay: 3000,
         // },
         pagination: {
-          el: slider.closest(".card-product").querySelector(".slider-pagination"),
-          clickable: true
-        }
+          el: slider
+            .closest(".card-product")
+            .querySelector(".slider-pagination"),
+          clickable: true,
+        },
       });
     });
   }
@@ -69,6 +71,14 @@ export default function sliders() {
             spaceBetween: 20,
           },
         },
+      });
+
+      slider.addEventListener("mouseenter", () => {
+        swiper.autoplay.stop();
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        swiper.autoplay.start();
       });
     });
   }
