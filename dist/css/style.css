@@ -1297,7 +1297,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 80px;
-  row-gap: 40px
+  row-gap: 12px
 }
 .header__drop-list {
   display: flex;
@@ -1335,7 +1335,8 @@ body {
   flex-direction: column;
   gap: 12px;
   padding-left: 24px;
-  padding-top: 12px
+  padding-top: 12px;
+  padding-bottom: 12px
 }
 .header__drop-sublist a {
   color: rgba(0,0,0,.54)
@@ -2200,7 +2201,8 @@ body {
     font-size: 16px
   }
   .header__drop-grid {
-    gap: 40px
+    gap: 40px;
+    row-gap: 12px
   }
   .intro__slide {
     min-height: 690px
@@ -2267,6 +2269,7 @@ body {
   }
   .header__drop-grid {
     gap: 30px;
+    row-gap: 12px;
     grid-template-columns: repeat(3,1fr)
   }
   .intro__slide {

@@ -236,7 +236,7 @@
       svg {
         position: absolute;
 
-        transition: opacity .3s ease;
+        transition: opacity 0.3s ease;
 
         &:nth-child(2) {
           opacity: 0;
@@ -387,16 +387,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 80px;
-    row-gap: 40px;
+    row-gap: 12px;
     @include laptop {
       gap: 40px;
+      row-gap: 12px;
     }
     @include laptop-middle {
       gap: 30px;
+      row-gap: 12px;
       grid-template-columns: repeat(3, 1fr);
     }
-  }
-  &__drop-col {
   }
   &__drop-list {
     display: flex;
@@ -444,6 +444,7 @@
     gap: 12px;
     padding-left: 24px;
     padding-top: 12px;
+    padding-bottom: 12px;
 
     a {
       color: rgba(0, 0, 0, 0.54);
