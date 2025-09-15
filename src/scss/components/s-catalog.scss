@@ -1,20 +1,33 @@
 .s-catalog {
   padding: 30px 0px 60px 0px;
+  @include laptop-min {
+    padding: 0px 0px 50px 0px;
+    overflow: hidden;
+  }
   &__wrapper {
     display: flex;
     align-items: start;
     gap: 45px;
+    @include laptop {
+      gap: 25px;
+    }
   }
   &__sidebar {
     position: sticky;
     top: 20px;
     width: 315px;
     flex-shrink: 0;
+    @include laptop-min {
+      display: none;
+    }
   }
   &__categories {
     border-radius: 20px;
     padding: 32px 48px;
     background-color: white;
+    @include laptop-middle {
+      padding: 24px 16px;
+    }
   }
   &__categories-title {
     font-weight: 500;
@@ -89,11 +102,19 @@
     width: 100%;
     gap: 15px;
     margin-bottom: 40px;
+    @include laptop-min {
+      display: block;
+    }
     @include tablet {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
   }
   &__filters {
+    @include laptop-min {
+      @include flex-between;
+      width: 100%;
+      margin-top: 8px;
+    }
     select {
       cursor: pointer;
       background-color: transparent;
@@ -112,12 +133,55 @@
       padding-left: 24px;
 
       background: url("@img/sort.svg") center left 0 / 18px auto no-repeat;
+
+      @include laptop-min {
+        font-weight: 400;
+        padding: 4px 36px 4px 12px;
+        background: url("@img/sort-mobile.svg") center right 12px / 20px auto no-repeat;
+      }
+    }
+  }
+  &__filters-open {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--black-55);
+
+    transition: color .3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+    @media (min-width: 992px) {
+      display: none;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: var(--black-32);
     }
   }
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    @include laptop-middle {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include laptop-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @include tablet-min {
+      gap: 8px;
+    }
 
     .card-product {
       &__slide {
@@ -135,7 +199,7 @@
     letter-spacing: -0.04em;
     color: var(--blue);
 
-    transition: color .3s ease;
+    transition: color 0.3s ease;
     @include hover {
       color: var(--primary);
     }

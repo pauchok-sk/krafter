@@ -34,6 +34,33 @@
             updateHeightBurger();
         }
     }
+    function filtersSearch() {
+        const input = document.querySelector("#filters-search");
+        if (input) {
+            const btnOpen = document.querySelector("#filters-search-open");
+            const wrapper = document.querySelector("#filters-search-wrapper");
+            const labels = document.querySelector(".modal-filters .bapf_body").querySelectorAll("label");
+            btnOpen.addEventListener("click", () => {
+                if (wrapper.classList.contains("_open")) {
+                    wrapper.classList.remove("_open");
+                    setTimeout(() => wrapper.style.display = "none", 300);
+                } else {
+                    wrapper.style.display = "block";
+                    setTimeout(() => wrapper.classList.add("_open"), 10);
+                }
+            });
+            input.addEventListener("input", e => {
+                const value = e.target.value.toLowerCase();
+                if (value) labels.forEach(label => {
+                    const li = label.closest("li");
+                    if (label.textContent.toLowerCase().includes(value)) li.style.display = "block"; else li.style.display = "none";
+                }); else labels.forEach(label => {
+                    const li = label.closest("li");
+                    li.style.display = "block";
+                });
+            });
+        }
+    }
     function headerDrop() {
         const drops = document.querySelectorAll(".header__drop");
         if (drops.length) {
@@ -222,6 +249,40 @@
         };
         const da = new DynamicAdapt("max");
         da.init();
+    }
+    function modalB() {
+        const buttons = document.querySelectorAll("[data-modal-b-btn]");
+        if (buttons.length) {
+            const overlay = document.querySelector("#modal-b-overlay");
+            const buttonsClose = document.querySelectorAll("[data-modal-b-close]");
+            if (buttonsClose.length) buttonsClose.forEach(b => b.addEventListener("click", () => {
+                const id = b.closest("[data-modal-b]").dataset.modalB;
+                handleClose(id);
+            }));
+            overlay.addEventListener("click", handleClose);
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const id = btn.dataset.modalBBtn;
+                    handleOpen(id);
+                });
+            });
+            function handleOpen(id) {
+                const modal = document.querySelector(`[data-modal-b="${id}"]`);
+                document.body.classList.add("body-hidden");
+                modal.classList.add("_active");
+                overlay.classList.add("_active");
+            }
+            function handleClose(id) {
+                let modal;
+                if (typeof id === "string") {
+                    modal = document.querySelector(`[data-modal-b="${id}"]`);
+                    console.log(modal);
+                } else modal = document.querySelector("[data-modal-b]._active");
+                document.body.classList.remove("body-hidden");
+                modal.classList.remove("_active");
+                overlay.classList.remove("_active");
+            }
+        }
     }
     function prev() {
         const btn = document.querySelector(".breadcrumbs-prev");
@@ -688,5 +749,7 @@
     headerDrop();
     prev();
     search();
+    filtersSearch();
+    modalB();
     Fancybox.bind("[data-fancybox]", {});
 })();

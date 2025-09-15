@@ -1,0 +1,144 @@
+.modal-filters {
+  &__search-btn {
+    width: 24px;
+    height: 24px;
+
+    color: var(--black-55);
+
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--primary);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__search {
+    padding: 0 15px;
+    display: none;
+    transform: translateY(-15px);
+    opacity: 0;
+
+    transition: transform .3s ease, opacity .3s ease;
+
+    &._open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  &__search-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 1px solid var(--black-55);
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 15px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 100px;
+      padding: 2px 10px;
+      background-color: var(--black-10);
+
+      font-size: 14px;
+      line-height: 157%;
+
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .bapf_head {
+    display: none;
+  }
+  .bapf_body {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 12px 14px;
+        width: 100%;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--black-10);
+        }
+
+        input {
+          display: none;
+
+          &:checked + label {
+            &::after {
+              border-color: black;
+              background: url("@img/check-white.svg") center / 9px auto
+                no-repeat;
+              background-color: black;
+            }
+          }
+        }
+
+        label {
+          @include flex-between;
+          width: 100%;
+
+          font-size: 14px;
+          line-height: 157%;
+
+          color: var(--black-87);
+
+          &::after {
+            content: "";
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            background-color: white;
+            border: 1px solid var(--black-10);
+          }
+        }
+      }
+    }
+  }
+  &__send {
+    button {
+      @include flex-center;
+      cursor: pointer;
+      border: none;
+      background-color: var(--primary);
+      width: calc(100% - 16px);
+      padding: 10px;
+      margin: 12px auto 0px auto;
+      border-radius: 100px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 157%;
+      color: var(--dark);
+
+      transition: color .3s ease, background-color .3s ease;
+      @include hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}

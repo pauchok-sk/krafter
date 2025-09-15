@@ -1,9 +1,33 @@
+.pagination-wrapper {
+  --count: attr(data-count);
+  @include tablet {
+    .nav-links {
+      &::after {
+        content: var(--count);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        order: 2;
+      }
+    }
+  }
+}
 .pagination {
   margin-top: 40px;
+  @include tablet {
+    width: calc(100% + 30px);
+    margin: 24px 0px 0px -15px;
+    padding: 4px 15px 0px 15px;
+    border-top: 1px solid #e9eaeb;
+  }
   .nav-links {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 4px;
+    @include tablet {
+      justify-content: space-between;
+    }
 
     a {
       transition:
@@ -11,7 +35,13 @@
         background-color 0.3s ease;
       @include hover {
         background-color: var(--black-10);
-        color: var(--black-55)
+        color: var(--black-55);
+      }
+
+      @include tablet {
+        &.page-numbers {
+          pointer-events: none;
+        }
       }
     }
   }
@@ -22,18 +52,39 @@
     border-radius: 50%;
     color: var(--black-55);
 
+    @include tablet {
+      display: none;
+    }
+
     &.current {
       background-color: var(--black-10);
+      @include tablet {
+        background-color: transparent;
+      }
     }
   }
 
-  .prev, .next {
+  .prev,
+  .next {
     font-size: 0;
+
+    @include tablet {
+      width: 30px;
+      height: 30px;
+      display: flex !important;
+      pointer-events: all !important;
+    }
   }
   .prev {
-    background: url('@img/prev.svg') center / 12px auto no-repeat;
+    background: url("@img/prev.svg") center / 12px auto no-repeat;
+    @include tablet {
+      order: 1;
+    }
   }
   .next {
-    background: url('@img/next.svg') center / 12px auto no-repeat;
+    background: url("@img/next.svg") center / 12px auto no-repeat;
+    @include tablet {
+      order: 3;
+    }
   }
 }

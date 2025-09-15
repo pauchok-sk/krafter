@@ -8,10 +8,10 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20250915163004" rel="stylesheet" />
-	<link rel="stylesheet" href="./files/swiper/swiper.min.css?_v=20250915163004" />
-	<link rel="stylesheet" href="./files/fancybox/fancybox.min.css?_v=20250915163004" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20250915163004" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&_v=20250916010053" rel="stylesheet" />
+	<link rel="stylesheet" href="./files/swiper/swiper.min.css?_v=20250916010053" />
+	<link rel="stylesheet" href="./files/fancybox/fancybox.min.css?_v=20250916010053" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20250916010053" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -1606,6 +1606,12 @@
 								</div>
 							</div>
 							<div class="s-catalog__filters">
+								<div class="s-catalog__filters-open" data-modal-b-btn="modal-filters">
+									<span>Категории</span>
+									<svg>
+										<use xlink:href='img/icons/icons.svg#icon-filters'></use>
+									</svg>
+								</div>
 								<select>
 									<option value="Новинки">Новинки</option>
 									<option value="По популярности">По популярности</option>
@@ -1849,23 +1855,96 @@
 								</div>
 							</div>
 						</div>
-						<nav class="navigation pagination" aria-label="Пагинация записей">
-							<div class="nav-links">
-								<a class="prev page-numbers" href="#">Назад</a>
-								<span aria-current="page" class="page-numbers current">1</span>
-								<a class="page-numbers" href="#">2</a>
-								<a class="page-numbers" href="#">3</a>
-								<a class="next page-numbers" href="#">Далее</a>
-							</div>
-						</nav>
+						<div class="pagination-wrapper" data-count="1 из 10">
+							<nav class="navigation pagination" aria-label="Пагинация записей">
+								<div class="nav-links">
+									<a class="prev page-numbers" href="#">Назад</a>
+									<span aria-current="page" class="page-numbers current">1</span>
+									<a class="page-numbers" href="#">2</a>
+									<a class="page-numbers" href="#">3</a>
+									<a class="page-numbers" href="#">4</a>
+									<div class="page-numbers">...</div>
+									<a class="page-numbers" href="#">83</a>
+									<a class="next page-numbers" href="#">Далее</a>
+								</div>
+							</nav>
+						</div>
 						<div class="s-catalog__more-btn">Показать ещё 20</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-
 	</main>
+	<div class="modal-b-overlay" id="modal-b-overlay"></div>
+
+	<div class="modal-b modal-filters" data-modal-b="modal-filters">
+		<div class="modal-b__head">
+			<div data-modal-b-close class="modal-b__prev">
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon-prev"></use>
+				</svg>
+				<span>Категории</span>
+			</div>
+			<div class="modal-filters__search-btn" id="filters-search-open">
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon-search"></use>
+				</svg>
+			</div>
+		</div>
+		<div class="modal-filters__search" id="filters-search-wrapper">
+			<input type="text" placeholder="Поиск..." id="filters-search" class="modal-filters__search-input">
+		</div>
+		<ul class="list modal-filters__list">
+			<li>
+				<span>Сантехнические перегородки</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon-close"></use>
+				</svg>
+			</li>
+			<li>
+				<span>Писсуарные перегородки</span>
+				<svg>
+					<use xlink:href="img/icons/icons.svg#icon-close"></use>
+				</svg>
+			</li>
+		</ul>
+		<div class="berocket_single_filter_widget berocket_single_filter_widget_110">
+			<div class="bapf_sfilter bapf_ckbox" data-op="OR" data-taxonomy="product_cat" data-name="Категории" id="bapf_1">
+				<div class="bapf_head">
+					<h3>Категории</h3>
+				</div>
+				<div class="bapf_body">
+					<ul>
+						<li>
+							<input data-name="Верх" id="bapf_1_28" type="checkbox" value="28" checked />
+							<label for="bapf_1_28">Сантехнические перегородки</label>
+						</li>
+						<li>
+							<input data-name="Низ" id="bapf_1_29" type="checkbox" value="29" />
+							<label for="bapf_1_29">Душевые перегородкииз</label>
+						</li>
+						<li>
+							<input data-name="Низ" id="bapf_1_292" type="checkbox" value="29" />
+							<label for="bapf_1_292">Писсуарные перегородки</label>
+						</li>
+						<li>
+							<input data-name="Низ" id="bapf_1_2229" type="checkbox" value="29" />
+							<label for="bapf_1_2229">Мебель из HPL</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="berocket_single_filter_widget berocket_single_filter_widget_118" data-id="118" style="">
+			<div class="bapf_sfilter modal-filters__send">
+				<div class="bapf_body">
+					<button class="bapf_button bapf_update">Применить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<footer class="footer">
 		<div class="container">
 			<nav class="footer__nav">
@@ -1952,10 +2031,10 @@
 		</div>
 	</footer>
 
-	<script src="./files/swiper/swiper.min.js?_v=20250915163004"></script>
-	<script src="./files/fancybox/fancybox.min.js?_v=20250915163004"></script>
+	<script src="./files/swiper/swiper.min.js?_v=20250916010053"></script>
+	<script src="./files/fancybox/fancybox.min.js?_v=20250916010053"></script>
 
-	<script src="js/app.min.js?_v=20250915163004"></script>
+	<script src="js/app.min.js?_v=20250916010053"></script>
 </body>
 
 </html>

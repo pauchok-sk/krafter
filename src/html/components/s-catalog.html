@@ -58,6 +58,12 @@
             </div>
           </div>
           <div class="s-catalog__filters">
+            <div class="s-catalog__filters-open" data-modal-b-btn="modal-filters">
+              <span>Категории</span>
+              <svg>
+                <use xlink:href='img/icons/icons.svg#icon-filters'></use>
+              </svg>
+            </div>
             <select>
               <option value="Новинки">Новинки</option>
               <option value="По популярности">По популярности</option>
@@ -337,15 +343,20 @@
             </div>
           </div>
         </div>
-        <nav class="navigation pagination" aria-label="Пагинация записей">
-          <div class="nav-links">
-            <a class="prev page-numbers" href="#">Назад</a>
-            <span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="#">2</a>
-            <a class="page-numbers" href="#">3</a>
-            <a class="next page-numbers" href="#">Далее</a>
-          </div>
-        </nav>
+        <div class="pagination-wrapper" data-count="1 из 10">
+          <nav class="navigation pagination" aria-label="Пагинация записей">
+            <div class="nav-links">
+              <a class="prev page-numbers" href="#">Назад</a>
+              <span aria-current="page" class="page-numbers current">1</span>
+              <a class="page-numbers" href="#">2</a>
+              <a class="page-numbers" href="#">3</a>
+              <a class="page-numbers" href="#">4</a>
+              <div class="page-numbers">...</div>
+              <a class="page-numbers" href="#">83</a>
+              <a class="next page-numbers" href="#">Далее</a>
+            </div>
+          </nav>
+        </div>
         <div class="s-catalog__more-btn">Показать ещё 20</div>
       </div>
     </div>
