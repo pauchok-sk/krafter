@@ -1,6 +1,7 @@
 .card-product {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   &__slider {
     border-radius: 20px;
     width: 100%;
@@ -10,7 +11,7 @@
     @include tablet {
       margin: 4px 0px 8px 0px;
       gap: 4px !important;
-      
+
       .swiper-pagination-bullet {
         flex-basis: 4px !important;
         height: 4px !important;
@@ -60,8 +61,14 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 144%;
+    width: fit-content;
     margin: 0px 0px 4px 0px;
 
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: var(--blue);
+    }
     @include tablet-min {
       font-size: 14px;
       line-height: 136%;

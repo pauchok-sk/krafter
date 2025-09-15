@@ -1,0 +1,39 @@
+.pagination {
+  margin-top: 40px;
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+
+    a {
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+      @include hover {
+        background-color: var(--black-10);
+        color: var(--black-55)
+      }
+    }
+  }
+  .page-numbers {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--black-55);
+
+    &.current {
+      background-color: var(--black-10);
+    }
+  }
+
+  .prev, .next {
+    font-size: 0;
+  }
+  .prev {
+    background: url('@img/prev.svg') center / 12px auto no-repeat;
+  }
+  .next {
+    background: url('@img/next.svg') center / 12px auto no-repeat;
+  }
+}

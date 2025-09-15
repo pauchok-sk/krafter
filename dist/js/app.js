@@ -223,6 +223,10 @@
         const da = new DynamicAdapt("max");
         da.init();
     }
+    function prev() {
+        const btn = document.querySelector(".breadcrumbs-prev");
+        if (btn) btn.addEventListener("click", () => window.history.back());
+    }
     function search() {
         const search = document.querySelector("#search");
         if (search) {
@@ -682,6 +686,7 @@
     introAdv();
     headerScroll();
     headerDrop();
+    prev();
     search();
     Fancybox.bind("[data-fancybox]", {});
 })();

@@ -19,6 +19,8 @@
 @import "./ui/card-new";
 @import "./ui/card-project";
 @import "./ui/search";
+@import "./ui/breadcrumbs";
+@import "./ui/pagination";
 
 // widgets
 @import "./widgets/burger";
@@ -33,5 +35,6 @@
 @import "./components/s-steps";
 @import "./components/s-adv";
 @import "./components/s-complex";
+@import "./components/s-catalog";
 
 @import "./components/footer";
