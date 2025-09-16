@@ -1,6 +1,7 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   font-family: "Inter", sans-serif;
 
@@ -19,6 +20,53 @@
   @include tablet {
     font-size: 12px;
     line-height: 125%;
+  }
+
+  &._bn {
+    .breadcrumbs-prev {
+      display: none;
+    }
+    .breadcrumbs-separator {
+      display: none;
+    }
+    .aioseo-breadcrumbs {
+      gap: 8px;
+    }
+    .aioseo-breadcrumb-separator {
+      font-size: 0;
+      opacity: 0.32;
+      width: 10px;
+      height: 10px;
+      background: url('@img/arrow-next.svg') center / 100% auto no-repeat;
+    }
+    .aioseo-breadcrumb:last-child {
+      font-weight: 500;
+      color: var(--black-87);
+    }
+
+    @include laptop-min {
+      width: fit-content;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+
+      .aioseo-breadcrumbs {
+        display: none;
+      }
+      .breadcrumbs-prev {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        span {
+          display: none;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 
   a {
@@ -55,9 +103,9 @@
 }
 .aioseo-breadcrumbs {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
-}
-.aioseo-breadcrumb {
 }
 .aioseo-breadcrumb-separator {
 }

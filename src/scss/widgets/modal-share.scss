@@ -1,0 +1,14 @@
+.modal-share {
+  display: none;
+  width: 500px;
+  padding: 30px;
+  max-width: calc(100% - 30px);
+  @include tablet {
+    padding: 25px 15px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+}

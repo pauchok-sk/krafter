@@ -1,0 +1,25 @@
+[data-copy] {
+  position: relative;
+  &._active {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &::after {
+    position: absolute;
+    font-size: 14px;
+    color: black;
+    top: -20px;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 4px;
+    background-color: var(--gray);
+    content: attr(data-copy-text);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .3s ease, visiblity .3s ease;
+  }
+}

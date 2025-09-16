@@ -21,11 +21,14 @@
 @import "./ui/search";
 @import "./ui/breadcrumbs";
 @import "./ui/pagination";
+@import "./ui/copy";
+@import "./ui/more-item";
 
 // widgets
 @import "./widgets/burger";
 @import "./widgets/modal-b";
 @import "./widgets/modal-filters";
+@import "./widgets/modal-share";
 
 // components
 @import "./components/header";
@@ -38,5 +41,6 @@
 @import "./components/s-adv";
 @import "./components/s-complex";
 @import "./components/s-catalog";
+@import "./components/s-product";
 
 @import "./components/footer";

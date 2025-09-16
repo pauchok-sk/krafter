@@ -34,6 +34,17 @@
             updateHeightBurger();
         }
     }
+    function copy() {
+        const buttons = document.querySelectorAll("[data-copy]");
+        if (buttons.length) buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const value = btn.dataset.copy;
+                navigator.clipboard.writeText(value);
+                btn.classList.add("_active");
+                setTimeout(() => btn.classList.remove("_active"), 2e3);
+            });
+        });
+    }
     function filtersSearch() {
         const input = document.querySelector("#filters-search");
         if (input) {
@@ -284,6 +295,27 @@
             }
         }
     }
+    function more() {
+        const containers = document.querySelectorAll(".container-more");
+        if (containers.length) containers.forEach(container => {
+            const btn = container.querySelector("[data-more-btn]");
+            const count = +container.dataset.countShow;
+            const hideItems = Array.from(container.querySelectorAll("[data-more-item]")).filter(item => window.getComputedStyle(item).display === "none");
+            if (hideItems.length === 0) btn.remove();
+            btn.addEventListener("click", () => {
+                const items = container.querySelectorAll("[data-more-item]");
+                const hideItems = Array.from(items).filter(item => window.getComputedStyle(item).display === "none");
+                hideItems.splice(0, count).forEach(item => {
+                    item.style.display = "block";
+                    setTimeout(() => {
+                        item.style.opacity = 1;
+                        item.style.transform = "translateY(0)";
+                    });
+                });
+                if (hideItems.length <= 0) btn.remove();
+            });
+        });
+    }
     function prev() {
         const btn = document.querySelector(".breadcrumbs-prev");
         if (btn) btn.addEventListener("click", () => window.history.back());
@@ -526,6 +558,33 @@
                 }
             });
         }
+        const productSlider = document.querySelector(".s-product__slider");
+        if (productSlider) {
+            const thumbProductSlider = document.querySelector(".s-product__thumb-slider");
+            const thumbSwiper = new Swiper(thumbProductSlider, {
+                speed: 900,
+                slidesPerView: "auto",
+                spaceBetween: 16
+            });
+            new Swiper(productSlider, {
+                speed: 900,
+                spaceBetween: 15,
+                thumbs: {
+                    swiper: thumbSwiper
+                },
+                autoplay: {
+                    delay: 3200
+                },
+                pagination: {
+                    el: ".s-product__gallery .slider-pagination",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".s-product__slider .slider-nav__btn._next",
+                    prevEl: ".s-product__slider .slider-nav__btn._prev"
+                }
+            });
+        }
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");
@@ -751,5 +810,8 @@
     search();
     filtersSearch();
     modalB();
+    copy();
+    more();
     Fancybox.bind("[data-fancybox]", {});
+    Shareon.init();
 })();

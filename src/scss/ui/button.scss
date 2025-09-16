@@ -60,6 +60,16 @@
       color: white;
     }
   }
+  &._primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--dark);
+    @include hover {
+      border-color: black;
+      background-color: black;
+      color: white;
+    }
+  }
   &._gray-white {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.01);
@@ -90,6 +100,7 @@
 }
 
 .btn-simple {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;

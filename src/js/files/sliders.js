@@ -237,4 +237,37 @@ export default function sliders() {
       },
     });
   }
+
+  const productSlider = document.querySelector(".s-product__slider");
+
+  if (productSlider) {
+    const thumbProductSlider = document.querySelector(
+      ".s-product__thumb-slider"
+    );
+
+    const thumbSwiper = new Swiper(thumbProductSlider, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 16,
+    });
+
+    const swiper = new Swiper(productSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+      autoplay: {
+        delay: 3200,
+      },
+      pagination: {
+        el: ".s-product__gallery .slider-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".s-product__slider .slider-nav__btn._next",
+        prevEl: ".s-product__slider .slider-nav__btn._prev",
+      },
+    });
+  }
 }

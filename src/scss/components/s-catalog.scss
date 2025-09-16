@@ -9,7 +9,10 @@
     align-items: start;
     gap: 45px;
     @include laptop {
-      gap: 25px;
+      gap: 24px;
+    }
+    @include laptop-min {
+      flex-direction: column;
     }
   }
   &__sidebar {
@@ -58,17 +61,43 @@
     padding: 24px;
     background-color: white;
     margin-top: 16px;
+    @include laptop-min {
+      padding: 16px;
+    }
+    @include tablet {
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
   }
   &__help-title {
     font-weight: 500;
     font-size: 24px;
     line-height: 125%;
     margin: 0px 0px 16px 0px;
+    @include tablet {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 133%;
+      margin-bottom: 12px;
+
+      br {
+        display: none;
+      }
+    }
   }
   &__help-descr {
     font-size: 14px;
     line-height: 157%;
+    color: var(--black-87);
     margin: 0px 0px 16px 0px;
+    @include tablet {
+      font-size: 12px;
+      line-height: 133%;
+      color: var(--black-55);
+      margin: 0;
+    }
   }
   &__help-btn {
     display: flex;
@@ -86,12 +115,24 @@
         transform: translateX(5px);
       }
     }
+    @include tablet {
+      flex-shrink: 0;
+      color: var(--dark);
+      span {
+        display: none;
+      }
+    }
 
     svg {
       width: 14px;
       height: 14px;
 
       transition: transform 0.3s ease;
+
+      @include tablet {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   &__main {
@@ -137,7 +178,8 @@
       @include laptop-min {
         font-weight: 400;
         padding: 4px 36px 4px 12px;
-        background: url("@img/sort-mobile.svg") center right 12px / 20px auto no-repeat;
+        background: url("@img/sort-mobile.svg") center right 12px / 20px auto
+          no-repeat;
       }
     }
   }
@@ -150,7 +192,7 @@
     line-height: 157%;
     color: var(--black-55);
 
-    transition: color .3s ease;
+    transition: color 0.3s ease;
 
     @include hover {
       color: var(--primary);

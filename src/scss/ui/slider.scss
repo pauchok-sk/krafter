@@ -18,7 +18,8 @@
 
     transition:
       background-color 0.3s ease,
-      opacity 0.3s ease;
+      opacity 0.3s ease,
+      color 0.3s ease;
 
     @include hover {
       background-color: rgba(0, 0, 0, 0.2);
@@ -28,6 +29,13 @@
       background-color: rgba(246, 246, 246, 0.24);
       @include hover {
         background-color: rgba(246, 246, 246, 0.44);
+      }
+    }
+    &._gray {
+      background-color: var(--gray);
+      @include hover {
+        background-color: black;
+        color: white;
       }
     }
 
