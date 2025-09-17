@@ -6,6 +6,12 @@
   margin-left: auto;
   width: fit-content;
 
+  &._mob-off {
+    @include tablet {
+      display: none;
+    }
+  }
+
   &__btn {
     @include flex-center;
     width: 40px;

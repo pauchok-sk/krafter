@@ -1,6 +1,8 @@
 .card-product {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
   overflow: hidden;
   &__slider {
     border-radius: 20px;
@@ -58,6 +60,15 @@
       padding: 6px 12px;
     }
   }
+  &__body {
+    padding: 6px 24px 24px 24px;
+    @include desktop {
+      padding: 6px 16px 16px 16px;
+    }
+    @include tablet-min {
+      padding: 4px 8px 8px 8px;
+    }
+  }
   &__title {
     font-weight: 500;
     font-size: 18px;
@@ -99,7 +110,7 @@
     line-height: 157%;
     padding: 9px 20px;
 
-    @include tablet-min {
+    @include tablet {
       display: none;
     }
 
@@ -122,7 +133,7 @@
       }
     }
 
-    @include tablet-min {
+    @include tablet {
       justify-content: center;
       gap: 6px;
       padding: 8px;
@@ -132,9 +143,12 @@
     }
 
     svg {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       transition: transform 0.3s ease;
+      @include tablet {
+        display: none;
+      }
     }
   }
 }

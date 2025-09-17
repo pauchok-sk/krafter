@@ -2,6 +2,29 @@
   padding: 40px 0px;
   color: white;
   background: #080808;
+
+  &._white {
+    background-color: white;
+    color: var(--black-87);
+
+    .footer__list a  {
+      color: var(--black-55);
+
+      @include hover {
+        color: black;
+      }
+    }
+    .footer__bottom {
+      color: var(--black-55);
+      border-color: var(--black-10);
+    }
+    .footer__bottom-flex a {
+      @include hover {
+        color: black;
+      }
+    }
+  }
+
   &__nav {
     display: flex;
     flex-wrap: wrap;

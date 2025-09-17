@@ -52,7 +52,7 @@
       transition: color 0.3s ease;
 
       @include hover {
-        color: var(--primary);
+        color: var(--blue);
       }
     }
   }
@@ -175,6 +175,11 @@
 
       background: url("@img/sort.svg") center left 0 / 18px auto no-repeat;
 
+      transition: color .3s ease;
+      @include hover {
+        color: var(--blue);
+      }
+
       @include laptop-min {
         font-weight: 400;
         padding: 4px 36px 4px 12px;
@@ -187,6 +192,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    padding: 4px 12px;
 
     font-size: 14px;
     line-height: 157%;
@@ -195,7 +201,7 @@
     transition: color 0.3s ease;
 
     @include hover {
-      color: var(--primary);
+      color: var(--blue);
     }
     @media (min-width: 992px) {
       display: none;
@@ -211,18 +217,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    @include laptop-middle {
+    @include laptop {
       grid-template-columns: repeat(2, 1fr);
-    }
-    @include laptop-min {
-      grid-template-columns: repeat(3, 1fr);
     }
     @include tablet {
-      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
     @include tablet-min {
       gap: 8px;
+      row-gap: 16px;
     }
 
     .card-product {
@@ -243,7 +246,7 @@
 
     transition: color 0.3s ease;
     @include hover {
-      color: var(--primary);
+      color: black;
     }
   }
 }
