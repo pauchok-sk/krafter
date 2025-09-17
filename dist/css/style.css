@@ -428,15 +428,18 @@ body {
   border-radius: 20px;
   overflow: hidden
 }
+.card-product__gallery {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px
+}
 .card-product__slider {
-  border-radius: 20px;
   width: 100%
 }
 .card-product__slider-pagination {
   margin: 8px 0 16px 0
 }
 .card-product__slide {
-  position: relative;
   width: 100%;
   height: auto;
   aspect-ratio: 1/1.15
